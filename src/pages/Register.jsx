@@ -20,7 +20,7 @@ export default function Register() {
 		try{
 			e.preventDefault()
 			//validation
-			const rs = axios.post('http://localhost:8800/auth/register', input)
+			const rs = axios.post('https://facebook-api-55vk.onrender.com/auth/register', input)
 			console.log(rs.data)
 			setInput({
 				firstName: '',
