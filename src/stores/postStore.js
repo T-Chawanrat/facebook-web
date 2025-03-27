@@ -6,7 +6,7 @@ const usePostStore = create( (set, get) => ({
 	currentPost : null,
 	loading: false,
 	createPost : async (body, token, user) => {
-		const rs = await axios.post('https://facebook-api-55vk.onrender.com/post', body , {
+		const rs = await axios.post('https://facebook-api-2jki.onrender.com/post', body , {
 			headers : { Authorization : `Bearer ${token}`}
 		})	
 		set(state => ({
@@ -15,13 +15,13 @@ const usePostStore = create( (set, get) => ({
 	},
 	getAllPosts : async (token) => {
 		set({loading: true})
-		const rs = await  axios.get('https://facebook-api-55vk.onrender.com/post', {
+		const rs = await  axios.get('https://facebook-api-2jki.onrender.com/post', {
 			headers : { Authorization : `Bearer ${token}`}
 		})
 		set({ posts: rs.data.posts , loading: false})
 	},
 	deletePost : async ( token, id) => {
-		const rs = await axios.delete(`https://facebook-api-55vk.onrender.com/post/${id}`, {
+		const rs = await axios.delete(`https://facebook-api-2jki.onrender.com/post/${id}`, {
 			headers : { Authorization : `Bearer ${token}`}
 		})
 		set(state => ({
@@ -32,22 +32,22 @@ const usePostStore = create( (set, get) => ({
 		set({currentPost : post})
 	},
 	updatePost : async (body, token, id) => {
-		const rs = await axios.put(`https://facebook-api-55vk.onrender.com/post/${id}`, body, {
+		const rs = await axios.put(`https://facebook-api-2jki.onrender.com/post/${id}`, body, {
 			headers : { Authorization : `Bearer ${token}`}	
 		})
 	},
 	createComment : async (body, token) => {
-		const rs = await axios.post('https://facebook-api-55vk.onrender.com/comment' ,body, {
+		const rs = await axios.post('https://facebook-api-2jki.onrender.com/comment' ,body, {
 			headers : { Authorization : `Bearer ${token}`}	
 		})	
 	},
 	createLike : async (token, body) => {
-		const rs = await axios.post('https://facebook-api-55vk.onrender.com/like', body, {
+		const rs = await axios.post('https://facebook-api-2jki.onrender.com/like', body, {
 			headers : { Authorization : `Bearer ${token}`}	
 		})
 	},
 	unLike : async  (token, id) => {
-		const rs = await axios.delete(`https://facebook-api-55vk.onrender.com/like/${id}`, {
+		const rs = await axios.delete(`https://facebook-api-2jki.onrender.com/like/${id}`, {
 			headers : { Authorization : `Bearer ${token}`}	
 		})
 	},

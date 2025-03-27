@@ -6,7 +6,7 @@ const useUserStore = create( persist((set, get)=> ({
 	user: null,
 	token : '',
 	login : async (input)=>{
-		const rs = await axios.post('https://facebook-api-55vk.onrender.com/auth/login', input)
+		const rs = await axios.post('https://facebook-api-2jki.onrender.com/auth/login', input)
 		set({token : rs.data.token , user: rs.data.user})
 		return rs.data
 	},
